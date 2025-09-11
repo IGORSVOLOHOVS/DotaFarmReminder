@@ -97,15 +97,22 @@ class MainWindow(QMainWindow):
             if self.sound_effect.isLoaded():
                 self.sound_effect.play()
             logger.info(f"Подсказка в {current_time}: {hint_text}")
-            QTimer.singleShot(5000, self.overlay.hide) # <-- ИЗМЕНЕНИЕ ЗДЕСЬ (4000 -> 5000)
+            QTimer.singleShot(5000, self.overlay.hide)
 
     def closeEvent(self, event):
+        # --- ИЗМЕНЕНИЕ ЗДЕСЬ: Сохраняем позицию оверлея ---
+        self.settings_repo.save_overlay_position(self.overlay.pos())
         self.settings_repo.save_main_window_state(self.saveGeometry(), self.saveState())
         self.overlay.close()
         super().closeEvent(event)
 
     def restore_settings(self):
+        # --- ИЗМЕНЕНИЕ ЗДЕСЬ: Восстанавливаем позицию оверлея ---
         geometry, state = self.settings_repo.load_main_window_state()
         if geometry and state:
             self.restoreGeometry(geometry)
             self.restoreState(state)
+        
+        overlay_pos = self.settings_repo.load_overlay_position()
+        if overlay_pos:
+            self.overlay.move(overlay_pos)

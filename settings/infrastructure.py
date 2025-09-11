@@ -12,3 +12,12 @@ class SettingsRepository:
         geometry = self._settings.value("mainWindow/geometry")
         state = self._settings.value("mainWindow/state")
         return geometry, state
+
+    # --- НОВЫЙ МЕТОД ---
+    def save_overlay_position(self, pos: QPoint):
+        self._settings.setValue("overlay/position", pos)
+
+    # --- НОВЫЙ МЕТОД ---
+    def load_overlay_position(self) -> QPoint | None:
+        pos = self._settings.value("overlay/position", type=QPoint)
+        return pos
