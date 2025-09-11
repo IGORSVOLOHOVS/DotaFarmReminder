@@ -5,3 +5,4 @@ PyYAML
 loguru
 pynput
 dependency-injector
+pyinstaller
