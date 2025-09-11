@@ -1,12 +1,14 @@
-import yaml
-from pathlib import Path
-from .domain import SettingsState, ISettingsRepository
+from PyQt6.QtCore import QSettings, QByteArray, QPoint, QSize
 
-class YamlSettingsRepository(ISettingsRepository):
-    def get_state(self) -> SettingsState:
-        # This is a mock implementation
-        return SettingsState(is_active=True)
+class SettingsRepository:
+    def __init__(self, company="MyCompany", app="Dota2Helper"):
+        self._settings = QSettings(company, app)
 
-def load_config(path: Path) -> dict:
-    with open(path, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f)
+    def save_main_window_state(self, geometry: QByteArray, state: QByteArray):
+        self._settings.setValue("mainWindow/geometry", geometry)
+        self._settings.setValue("mainWindow/state", state)
+
+    def load_main_window_state(self) -> tuple[QByteArray | None, QByteArray | None]:
+        geometry = self._settings.value("mainWindow/geometry")
+        state = self._settings.value("mainWindow/state")
+        return geometry, state

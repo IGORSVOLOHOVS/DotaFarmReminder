@@ -1,12 +1,12 @@
 from dataclasses import dataclass
-from abc import ABC, abstractmethod
+from typing import List
 
 @dataclass
-class Hint_managerState:
-    # TODO: Add fields
-    is_active: bool = False
+class Hint:
+    time: str
+    text: str
 
-class IHint_managerRepository(ABC):
-    @abstractmethod
-    def get_state(self) -> Hint_managerState:
-        raise NotImplementedError
+@dataclass
+class HintState:
+    current_role: str = "support"
+    hints: List[Hint] | None = None
