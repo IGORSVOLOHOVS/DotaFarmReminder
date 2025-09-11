@@ -73,7 +73,6 @@ class MainWindow(QMainWindow):
         self.timer_uc.time_updated.connect(self.check_for_hint)
 
         self.role_widget.role_changed.connect(self.hint_uc.set_role)
-        self.role_widget.hero_changed.connect(self.hint_uc.set_hero)
 
     def on_start_pressed(self):
         self.timer_uc.start()
@@ -88,7 +87,7 @@ class MainWindow(QMainWindow):
     def on_reset_pressed(self):
         self.timer_uc.reset()
         self.timer_widget.set_running_state(False)
-        self.overlay.hide() # <-- ИЗМЕНЕНИЕ ЗДЕСЬ
+        self.overlay.hide()
         logger.info("Таймер сброшен")
 
     def check_for_hint(self, current_time: str):
@@ -98,7 +97,7 @@ class MainWindow(QMainWindow):
             if self.sound_effect.isLoaded():
                 self.sound_effect.play()
             logger.info(f"Подсказка в {current_time}: {hint_text}")
-            QTimer.singleShot(4000, self.overlay.hide) # <-- ИЗМЕНЕНИЕ ЗДЕСЬ
+            QTimer.singleShot(5000, self.overlay.hide) # <-- ИЗМЕНЕНИЕ ЗДЕСЬ (4000 -> 5000)
 
     def closeEvent(self, event):
         self.settings_repo.save_main_window_state(self.saveGeometry(), self.saveState())
