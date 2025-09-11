@@ -1,0 +1,4 @@
+# Configuration for the timer component
+default_settings:
+  param1: value1
+  param2: value2
