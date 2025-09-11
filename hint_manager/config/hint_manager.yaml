@@ -1,4 +1,0 @@
-# Configuration for the hint_manager component
-default_settings:
-  param1: value1
-  param2: value2

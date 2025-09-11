@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List
 
 @dataclass
@@ -9,4 +9,4 @@ class Hint:
 @dataclass
 class HintState:
     current_role: str = "support"
-    hints: List[Hint] | None = None
+    hints: List[Hint] = field(default_factory=list)

@@ -1,0 +1,39 @@
+# Виртуальное окружение
+.venv/
+venv/
+ENV/
+env/
+__pypackages__/
+
+# Кэш Python и байт-код
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Логи и временные файлы
+logs/
+*.log
+*.log.*
+*.tmp
+*.swp
+
+# Артефакты тестирования
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Конфигурационные файлы IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Файлы операционной системы
+.DS_Store
+Thumbs.db
+
+# Файлы сборки и дистрибуции
+/dist/
+/build/
+*.egg-info/
