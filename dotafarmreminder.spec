@@ -8,7 +8,13 @@ a = Analysis(
         ('hint_manager/config', 'hint_manager/config'),
         ('notification.wav', '.')
     ],
-    hiddenimports=['pynput.keyboard._win32', 'pynput.mouse._win32'],
+    # --- ИЗМЕНЕНИЕ ЗДЕСЬ ---
+    hiddenimports=[
+        'pynput.keyboard._win32', 
+        'pynput.mouse._win32', 
+        'configparser',
+        'dependency_injector.errors'
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -22,7 +28,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='DotaFarmReminder',  # <-- ИЗМЕНЕНИЕ ЗДЕСЬ
+    name='DotaFarmReminder',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -33,7 +39,7 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon='app_icon.ico'
+    icon='image.png'
 )
 coll = COLLECT(
     exe,
@@ -43,5 +49,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='DotaFarmReminder', # <-- ИЗМЕНЕНИЕ ЗДЕСЬ
+    name='DotaFarmReminder',
 )
