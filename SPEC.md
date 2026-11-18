@@ -4,6 +4,31 @@
 заявленное, но не сделанное вынесено в п. 3.7, неясное — в п. 9. Обзор проекта и команды —
 [docs/README.md](docs/README.md).
 
+<!-- jira-sync:start -->
+Jira: KAN-125
+
+## Tasks
+
+This list is one ticket in Jira project KAN, [KAN-125](https://igorsvolohovs.atlassian.net/browse/KAN-125). Each line is a checkbox there: tick it in Jira and the sync ticks it here; add a checkbox there and it is appended here. Done items are the features described in section 3; open items are what the project declares but the code does not do yet.
+
+- [x] Таймер (section 3.1) <!-- spec-2ae8f59c32 -->
+- [x] Роли и подсказки (section 3.2) <!-- spec-0709c493b3 -->
+- [x] Оверлей (section 3.3) <!-- spec-6d1f1cfdf8 -->
+- [x] Сохранение состояния (section 3.4) <!-- spec-38a41e8ca0 -->
+- [x] Главное окно, журнал, завершение (section 3.5) <!-- spec-ba2f4d18c9 -->
+- [x] Содержимое и инструменты разработчика (section 3.6) <!-- spec-9e8692464b -->
+- [ ] Сборка в один исполняемый файл в `dist` (declared, not implemented) <!-- spec-dist-63efad85e7 -->
+- [ ] Иконка `image.ico` (declared, not implemented) <!-- spec-image-ico -->
+- [ ] Формат времени «ЧЧ:ММ» (declared, not implemented) <!-- spec-6c257bc848 -->
+- [ ] Use case'ы и репозитории оверлея и настроек (declared, not implemented) <!-- spec-use-case-b93134fed9 -->
+- [ ] Поля состояния оверлея и настроек (declared, not implemented) <!-- spec-074cd8dda9 -->
+- [ ] `YamlTimerRepository` (declared, not implemented) <!-- spec-yamltimerrepository -->
+- [ ] Настройки компонентов (declared, not implemented) <!-- spec-9402c2cd0b -->
+- [ ] Тесты компонентов (declared, not implemented) <!-- spec-ad1b509d21 -->
+- [ ] Замеры производительности (declared, not implemented) <!-- spec-83234c0c92 -->
+
+<!-- jira-sync:end -->
+
 ## 1. Назначение и область
 
 Приложение показывает игроку Dota 2 подсказки по фарму для выбранной роли в заданные моменты
